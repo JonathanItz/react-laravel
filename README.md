@@ -3,7 +3,7 @@
 <hr>
 <h3>Installation</h3>
 <ol>
-    <li>git clone https://github.com/JonathanItz/react-laravel.git</li>
+    <li><code>git clone https://github.com/JonathanItz/react-laravel.git</code></li>
     <li><code>cd react-laravel</code></li>
     <li><code>composer install</code></li>
     <li><code>npm i</code> / <code>yarn install</code></li>
