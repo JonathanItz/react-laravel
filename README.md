@@ -4,9 +4,13 @@
 <h3>Installation</h3>
 <ol>
     <li>git clone https://github.com/JonathanItz/react-laravel.git</li>
-    <li>cd to project</li>
+    <li>cd react-laravel</li>
     <li>composer install</li>
     <li>npm i / yarn install</li>
-    <li>php artisan serve</li>
-    <li>have fun</li>
+    <li>cp .env.example .env (and edit this file as needed)</li>
+    <li>php artisan key:generate (this generates a key for your environment)</li>
+    <li>Open two tabs in your terminal. One for Laravel and one for React</li>
+    <li>(tab 1) php artisan serve</li>
+    <li>(tab 2) npm run dev/watch / yarn dev/watch</li>
+    <li>Create something cool</li>
 </ol>
