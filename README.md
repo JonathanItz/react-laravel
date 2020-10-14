@@ -5,12 +5,12 @@
 <ol>
     <li>git clone https://github.com/JonathanItz/react-laravel.git</li>
     <li><code>cd react-laravel</code></li>
-    <li>composer install</li>
-    <li>npm i / yarn install</li>
-    <li>cp .env.example .env (and edit this file as needed)</li>
-    <li>php artisan key:generate (this generates a key for your environment)</li>
+    <li><code>composer install</code></li>
+    <li><code>npm i</code> / <code>yarn install</code></li>
+    <li><code>cp .env.example .env</code> (and edit this file as needed)</li>
+    <li><code>php artisan key:generate</code> (this generates a key for your environment)</li>
     <li>Open two tabs in your terminal. One for Laravel and one for React</li>
-    <li>(tab 1) php artisan serve</li>
-    <li>(tab 2) npm run dev/watch / yarn dev/watch</li>
+    <li>(tab 1) <code>php artisan serve</code></li>
+    <li>(tab 2) <code>npm run dev/watch</code> / <code>yarn dev/watch</code></li>
     <li>Create something cool</li>
 </ol>
