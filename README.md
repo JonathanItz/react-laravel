@@ -4,7 +4,7 @@
 <h3>Installation</h3>
 <ol>
     <li>git clone https://github.com/JonathanItz/react-laravel.git</li>
-    <li>cd react-laravel</li>
+    <li><code>cd react-laravel</code></li>
     <li>composer install</li>
     <li>npm i / yarn install</li>
     <li>cp .env.example .env (and edit this file as needed)</li>
