@@ -30842,8 +30842,8 @@ if (el) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/jonathanitzen/Desktop/react-laravel/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/jonathanitzen/Desktop/react-laravel/resources/css/app.css */"./resources/css/app.css");
+__webpack_require__(/*! /Users/jonathanitzen/Desktop/react-laravel1/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/jonathanitzen/Desktop/react-laravel1/resources/css/app.css */"./resources/css/app.css");
 
 
 /***/ })
