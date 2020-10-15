@@ -44,3 +44,7 @@ Route::get( '/about', function() {
 });
 
 Route::view( '/static', 'static' );
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
