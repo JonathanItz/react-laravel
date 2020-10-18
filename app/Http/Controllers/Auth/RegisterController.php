@@ -8,6 +8,10 @@ use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Auth\Events\Registered;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
 
 use Inertia\Inertia;
 
@@ -46,8 +50,7 @@ class RegisterController extends Controller
         // return view('auth.register');
 
         return Inertia::render( 'auth/Register', [
-            'action' => route('register'),
-            'token'  => csrf_token()
+            'action' => route( 'register' )
         ]);
     }
 
@@ -64,6 +67,28 @@ class RegisterController extends Controller
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
         return $results;
+    }
+
+    /**
+     * Handle a registration request for the application.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\JsonResponse
+     */
+    public function register( Request $request ) {
+        try {
+            $this->validator( $request->all() )->validate();
+
+            event( new Registered( $user = $this->create( $request->all() ) ) );
+
+            // $this->guard()->login( $user ); // Uncomment this to log the user in right away
+
+            if ( $response = $this->registered( $request, $user ) ) {
+                return $response;
+            }
+        } catch ( \Exception $e ) {
+            return new JsonResponse( $e, 422 );
+        }
     }
 
     /**

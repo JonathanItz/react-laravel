@@ -1,15 +1,8 @@
 import React from 'react'
-import { InertiaLink } from '@inertiajs/inertia-react'
+import AuthHandler from './Components/AuthHandler'
 
-const Login = () => {
-    return (
-        <>
-            <h1>Login Page</h1>
-            <InertiaLink href="/register">Register</InertiaLink>
-            <br />
-            <InertiaLink href="/">Home</InertiaLink>
-        </>
-    )
+const loginPage = () => {
+    return <AuthHandler form={ true } />
 }
 
-export { Login as default }
+export default loginPage;

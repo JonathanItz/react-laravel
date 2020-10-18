@@ -37,7 +37,7 @@ Route::get( '/user/{name}', function( Request $request  ) {
             'user_id' => $ids[ $name ]
         ]
     ]);
-})->name( 'user' );
+})->middleware( 'auth' )->name( 'user' );
 
 Route::get( '/about', function() {
     return Inertia::render( 'About' );
