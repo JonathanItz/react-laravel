@@ -1,13 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
-// use Illuminate\Http\Request;
+
 use Inertia\Inertia;
+use Auth;
 
 class UsersController extends Controller
 {
-    public function index()
-    {
+    public function index() {
         return Inertia::render( 'Users', [
             'users' => [
                 [
@@ -16,7 +16,8 @@ class UsersController extends Controller
                 [
                     'name' => 'Lucas'
                 ]
-            ]
+            ],
+            'current_user' => Auth::user()
         ]);
     }
 }

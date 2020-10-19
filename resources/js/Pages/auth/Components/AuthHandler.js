@@ -4,7 +4,7 @@ import axios from 'axios'
 import LoginForm from './LoginForm'
 import RegistrationForm from './RegistrationForm'
 
-const AuthHandler = ( { action, token, errors, form } ) => {
+const AuthHandler = ( { action, token, form } ) => {
 
     const [ nameError, setNameError ]                   = useState( false )
     const [ emailError, setEmailError ]                 = useState( false )
@@ -13,7 +13,7 @@ const AuthHandler = ( { action, token, errors, form } ) => {
     const [ passwordMatchError, setPasswordMatch ]      = useState( false )
     const [ generalError, setGeneralError ]             = useState( false )
 
-    // Show Login or registration form
+    // Show Login or registration form. true for Login, false for Registration
     const [ loginOrRegistration, setLoginOrRegistration ] = useState( form )
 
     const registerUser = ( e ) => {
@@ -60,7 +60,7 @@ const AuthHandler = ( { action, token, errors, form } ) => {
     const states = { nameError, emailError, passwordError, passwordCheckError, passwordMatchError, generalError }
 
     // Return either the registration or Login
-    return loginOrRegistration ? <LoginForm /> : <RegistrationForm registerUser={ registerUser } { ...states } />
+    return loginOrRegistration ? <LoginForm action={ action } /> : <RegistrationForm registerUser={ registerUser } { ...states } />
 }
 
 export { AuthHandler as default }

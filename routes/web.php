@@ -20,7 +20,7 @@ use Illuminate\Http\Request;
 //     return view('welcome');
 // });
 
-Route::get( '/', [Controllers\UsersController::class, 'index'] )->name( 'users' );
+Route::get( '/', [ Controllers\UsersController::class, 'index' ] )->name( 'users' );
 Route::get( '/user/{name}', function( Request $request  ) {
     $name = $request->name;
 
@@ -47,4 +47,4 @@ Route::view( '/static', 'static' );
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get( '/dashboard', [ App\Http\Controllers\DashboardController::class, 'index' ] )->name( 'dashboard' );
